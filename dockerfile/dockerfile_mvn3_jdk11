@@ -1,0 +1,3 @@
+FROM maven:3-jdk-11
+COPY file/settings-docker.xml /usr/share/maven/conf/settings.xml
+ADD script/* /usr/local/bin/

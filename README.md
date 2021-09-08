@@ -1,39 +1,36 @@
 # jianmu-runner-maven
 
 #### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+用于替换maven配置，增加nexus配置，便于java项目的ci流程
 
-#### 软件架构
-软件架构说明
+#### 版本
+maven3  
+jdk11
 
+#### 参数
 
-#### 安装教程
+JIANMU_WORKSPACE: mvn执行目录
+JIANMU_MVN_ACTION: mvn执行的生命周期
+JIANMU_EXTRA_ARGE: 构建时附加的额外命令，选填
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+##### maven nexus参数
+```
+JIANMU_MAVEN_PUBLIC_ID
+JIANMU_MAVEN_PUBLIC_URL
+JIANMU_NEXUS_USERNAME
+JIANMU_NEXUS_PASSWORD
+```
 
-#### 使用说明
+##### pom文件中可选参数
+```
+JIANMU_MAVEN_RELEASE_ID
+JIANMU_MAVEN_RELEASE_URL
+JIANMU_MAVEN_SNAPSHOT_ID
+JIANMU_MAVEN_SNAPSHOT_URL
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+JIANMU_DOCKER_USERNAME
+JIANMU_DOCKER_PASSWORD
+JIANMU_IMAGE_NAME
+JIANMU_IMAGE_TAG
+```
 
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)

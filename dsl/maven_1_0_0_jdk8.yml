@@ -1,0 +1,67 @@
+ref: maven_build
+version: 1.0.0-jdk8
+inputParameters:
+  - ref: workspace
+    name: workspace
+    type: STRING
+    value: .
+  - ref: mvn_action
+    name: mvn action
+    type: STRING
+    value: install
+  - ref: extra_arge
+    name: extra arge
+    type: STRING
+    value: ""
+  - ref: nexus_username
+    name: nexus username
+    type: SECRET
+    value: admin
+  - ref: nexus_password
+    name: nexus password
+    type: SECRET
+    value: 123456
+  - ref: maven_public_id
+    name: maven public id
+    type: STRING
+    value: public
+  - ref: maven_public_url
+    name: maven public url
+    type: STRING
+    value: nexus/repository/public
+  - ref: maven_release_id
+    name: maven release id
+    type: STRING
+    value: release
+  - ref: maven_release_url
+    name: maven release url
+    type: STRING
+    value: nexus/repository/release
+  - ref: maven_snapshot_id
+    name: maven snapshot id
+    type: STRING
+    value: snapshot
+  - ref: maven_snapshot_url
+    name: maven snapshot url
+    type: STRING
+    value: nexus/repository/snapshot
+  - ref: docker_username
+    name: docker username
+    type: SECRET
+    value: jianmudev
+  - ref: docker_password
+    name: docker password
+    type: SECRET
+    value: 123456
+  - ref: image_name
+    name: image name
+    type: STRING
+    value: imagename
+  - ref: image_tag
+    name: image tag
+    type: STRING
+    value: latest
+spec:
+  image: 'jianmudev/maven_build:1.0.0-jdk8'
+  entrypoint: 
+    - /usr/local/bin/mvn_start
