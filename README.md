@@ -5,13 +5,13 @@
 
 #### 版本
 maven3  
-jdk11
 
 #### 参数
-
+```
 JIANMU_WORKSPACE: mvn执行目录
 JIANMU_MVN_ACTION: mvn执行的生命周期
 JIANMU_EXTRA_ARGE: 构建时附加的额外命令，选填
+```
 
 ##### maven nexus参数
 ```
