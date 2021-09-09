@@ -62,6 +62,6 @@ inputParameters:
     type: STRING
     value: latest
 spec:
-  image: 'jianmudev/maven_build:1.0.0-jdk8'
+  image: 'jianmudev/jianmu-runner-maven-build:1.0.0-jdk8'
   entrypoint: 
     - /usr/local/bin/mvn_start
