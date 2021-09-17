@@ -10,3 +10,18 @@ pwd
 ls -a
 
 mvn ${JIANMU_MVN_ACTION} ${JIANMU_EXTRA_ARGE}
+
+artifactId=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="artifactId"]/text()' ${JIANMU_VC_POM_DIR}/pom.xml)
+version=$(xmllint --xpath '/*[local-name()="project"]/*[local-name()="version"]/text()' ${JIANMU_VC_POM_DIR}/pom.xml)
+
+if [ "${artifactId}" == "XPath set is empty" ];then
+	artifactId=""
+fi
+
+if [ "${version}" == "XPath set is empty" ];then
+        version=""
+fi
+
+
+echo "{\"artifactId\": \"${artifactId}\",\"version\": \"${version}\"}" > /tmp/result.json
+

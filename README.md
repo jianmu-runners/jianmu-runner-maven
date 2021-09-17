@@ -3,14 +3,12 @@
 #### 介绍
 用于替换maven配置，增加nexus配置，便于java项目的ci流程
 
-#### 版本
-maven3  
-
-#### 参数
+#### 输入参数
 ```
 JIANMU_WORKSPACE: mvn执行目录
 JIANMU_MVN_ACTION: mvn执行的生命周期
-JIANMU_EXTRA_ARGE: 构建时附加的额外命令，选填
+JIANMU_EXTRA_ARGE: 构建时附加的额外参数
+JIANMU_VC_POM_DIR: 获取artifactId和版本信息的pom文件的所在模块的相对路径
 ```
 
 ##### maven nexus参数
@@ -34,3 +32,31 @@ JIANMU_IMAGE_NAME
 JIANMU_IMAGE_TAG
 ```
 
+#### 输出参数
+```
+artifactId: 项目artifactID
+version: 项目版本
+```
+
+#### 构建docker镜像
+```
+# 创建docker镜像
+docker build -f dockerfile/xxx -t jianmudev/jianmu-runner-maven-build:${version} .
+
+# 上传docker镜像
+docker push jianmudev/jianmu-runner-maven-build:${version}
+```
+
+#### 用法
+maven build
+```
+docker run --rm \
+  -e JIANMU_WORKSPACE=xxx \
+  -e JIANMU_MVN_ACTION=xxx \
+  -e JIANMU_EXTRA_ARGE=xxx \
+  -e JIANMU_VC_POM_DIR=xx/xx \
+  -v /${workspace}/${project_dir}:/tmp/dist \
+  -v /${workspace}/result_file:/tmp/result_file \
+  jianmudev/jianmu-runner-maven-build:${version} \
+  mvn_start
+```
