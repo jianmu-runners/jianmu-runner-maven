@@ -1,5 +1,5 @@
 ref: maven_build
-version: 1.1.0-jdk11
+version: 1.2.0-jdk11
 resultFile: /tmp/result.json
 inputParameters:
   - ref: workspace
@@ -29,7 +29,7 @@ inputParameters:
   - ref: maven_public_url
     name: maven public url
     type: STRING
-    value: nexus/repository/public
+    value: https://maven.aliyun.com/repository/public
   - ref: maven_release_id
     name: maven release id
     type: STRING
@@ -37,7 +37,7 @@ inputParameters:
   - ref: maven_release_url
     name: maven release url
     type: STRING
-    value: nexus/repository/release
+    value: ""
   - ref: maven_snapshot_id
     name: maven snapshot id
     type: STRING
@@ -45,7 +45,7 @@ inputParameters:
   - ref: maven_snapshot_url
     name: maven snapshot url
     type: STRING
-    value: nexus/repository/snapshot
+    value: ""
   - ref: docker_username
     name: docker username
     type: SECRET
@@ -65,7 +65,7 @@ inputParameters:
   - ref: vc_pom_dir
     name: 获取artifactId和版本信息的pom文件的所在模块的相对路径
     type: STRING
-    value: "."
+    value: .
 outputParameters:
   - ref: artifactId
     name: 项目artifactID
@@ -76,6 +76,6 @@ outputParameters:
     type: STRING
     value: version
 spec:
-  image: 'jianmudev/jianmu-runner-maven-build:1.1.0-jdk11'
+  image: 'jianmudev/jianmu-runner-maven-build:1.2.0-jdk11'
   entrypoint: 
     - /usr/local/bin/mvn_start
