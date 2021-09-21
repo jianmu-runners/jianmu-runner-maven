@@ -158,12 +158,6 @@ under the License.
    | server for that repository.
    |-->
   <mirrors>
-    <mirror>
-      <id>alimaven</id>
-      <mirrorOf>*</mirrorOf>
-      <name>aliyun maven</name>
-      <url>https://maven.aliyun.com/repository/public</url>
-    </mirror>
     <!-- mirror
      | Specifies a repository mirror site to use instead of a given repository. The repository that
      | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
@@ -219,6 +213,19 @@ under the License.
           </snapshots>
         </repository>
       </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>${env.JIANMU_MAVEN_PUBLIC_ID}</id>
+          <name>maven-plugin-public</name>
+          <url>${env.JIANMU_MAVEN_PUBLIC_URL}</url>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
     </profile>
     <!-- profile
      | Specifies a set of introductions to the build process, to be activated using one or more of the
