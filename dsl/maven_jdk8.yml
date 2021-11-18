@@ -1,11 +1,11 @@
 ref: maven_build
-version: 1.3.0-jdk8
+version: 1.4.0-jdk8
 resultFile: /tmp/result.json
 inputParameters:
   - ref: workspace
     name: workspace
     type: STRING
-    value: .
+    required: true
   - ref: mvn_action
     name: mvn action
     type: STRING
@@ -70,12 +70,12 @@ outputParameters:
   - ref: artifactId
     name: 项目artifactID
     type: STRING
-    value: name
+    required: true
   - ref: version
     name: 项目版本
     type: STRING
-    value: version
+    required: true
 spec:
-  image: 'jianmudev/jianmu-runner-maven-build:1.3.0-jdk8'
+  image: 'jianmudev/jianmu-runner-maven-build:1.4.0-jdk8'
   entrypoint: 
     - /usr/local/bin/mvn_start
