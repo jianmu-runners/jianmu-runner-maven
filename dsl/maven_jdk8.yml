@@ -47,11 +47,11 @@ inputParameters:
     type: STRING
     value: ""
   - ref: docker_username
-    name: docker username
+    name: dockerhub用户名
     type: SECRET
     value: jianmudev
   - ref: docker_password
-    name: docker password
+    name: dockerhub密钥/密码
     type: SECRET
     value: "123456"
   - ref: image_name
