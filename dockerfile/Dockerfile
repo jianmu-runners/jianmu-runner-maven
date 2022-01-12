@@ -1,4 +1,4 @@
-FROM maven:3-jdk-8
+FROM maven:${maven_image_tag}
 RUN apt-get update
 RUN apt-get install libxml2-utils -y
 COPY file/settings-docker.xml /usr/share/maven/conf/settings.xml
