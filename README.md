@@ -41,10 +41,10 @@ version: 项目版本
 #### 构建docker镜像
 ```
 # 创建docker镜像
-docker build -f dockerfile/xxx -t jianmudev/jianmu-runner-maven-build:${version} .
+docker build -f dockerfile/Dockerfile -t jianmurunner/maven_build:${version} .
 
 # 上传docker镜像
-docker push jianmudev/jianmu-runner-maven-build:${version}
+docker push jianmurunner/maven_build:${version}
 ```
 
 #### 用法
@@ -57,6 +57,6 @@ docker run --rm \
   -e JIANMU_VC_POM_DIR=xx/xx \
   -v /${workspace}/${project_dir}:/tmp/dist \
   -v /${workspace}/result_file:/tmp/result_file \
-  jianmudev/jianmu-runner-maven-build:${version} \
+  jianmurunner/maven_build:${version} \
   mvn_start
 ```
